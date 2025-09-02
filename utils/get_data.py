@@ -16,9 +16,11 @@ def get_data(url, arr):
     arr.append('Equipment:')
     for child in equipment:
         arr.append(child.get_text())
+    arr.append('Ingredients:')
     for child in ingredients:
         for c in child.children:
             arr.append(c.get_text())
+    arr.append('Instructions')
     for child in instructions:
         for c in child.children:
             arr.append(c.get_text())
