@@ -2,8 +2,9 @@ from utils import get_data
 
 def main():
     array = []
-    print("Hello from recipescraper!")
-    new_array = get_data('https://preppykitchen.com/chicken-tetrazzini/#recipe', array)
+    url = input('Enter the url for the Preppy Kitchen recipe: ')
+    new_array = get_data(url, array)
+    
     print(new_array)
 
 
