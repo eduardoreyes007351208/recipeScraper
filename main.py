@@ -15,7 +15,7 @@ def main():
         if (url.lower() == 'q'):
             print('\nGoodbye!\n')
         else:
-            print('Invalid URL')
+            print('\nInvalid URL\n')
             main()
     
 
