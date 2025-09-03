@@ -7,7 +7,7 @@ def main():
     
     if validators.url(url):
         print('valid URL')
-        new_array = get_data(url, array)
+        new_array, file_name = get_data(url, array)
         print(new_array)
         
     else:
