@@ -24,6 +24,6 @@ def get_data(url, arr):
     arr.append('Instructions')
     for child in instructions:
         for c in child.children:
-            arr.append(c.get_text())
+            arr.append(f'• {c.get_text()}')
         
     return arr, file_name
