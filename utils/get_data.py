@@ -30,7 +30,7 @@ def get_data(url, arr):
         
     return arr, file_name
 
-
+# try and add just @type == 'Recipe' if website has no @graph - ER 9/3/2025
 def practice():
     user_input = input('Enter the url for the Preppy Kitchen recipe(enter "q" to quit): ')
     headers = {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0'}
