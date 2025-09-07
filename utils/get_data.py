@@ -45,6 +45,8 @@ def get_data(url, arr):
     for i, item in enumerate(ingredient_list, start=1):
         arr.append(f'{i}. {item}')
         
+    # need to figure out why I get 'None' for instructions on some when it still has 
+    # 'text' attribute
     
     arr.append('\nInstructions:')
     for section in instruction_list:
