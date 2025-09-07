@@ -32,7 +32,7 @@ def get_data(url, arr):
                 ingredient_list = recipe.get('recipeIngredient')
                 instruction_list = recipe.get('recipeInstructions')
     else:
-        print(False)
+        
         data = group_array[0]
         title = data.get('name')
         ingredient_list = data.get('recipeIngredient')
@@ -40,24 +40,21 @@ def get_data(url, arr):
         
     file_name = title.lower().replace(' ', '_')
     arr.append(title)
-    print(f"\n{title}\n")
     
     arr.append('\nIngredients:')
-    print('\nIngredients:')
     for i, item in enumerate(ingredient_list, start=1):
         arr.append(f'{i}. {item}')
-        print(f"{i}. {item}")
+        
     
     arr.append('\nInstructions:')
-    print('\nInstructions:')
     for section in instruction_list:
         sec_name = section.get('name')
         arr.append(f'{sec_name}')
-        print(f"\n{sec_name}")
+        
         
         steps = section.get('itemListElement', [])
         for i, step in enumerate(steps, start=1):
             arr.append(f'{i}. {step.get('text')}')
-            print(f"{i}. {step.get('text')}")
+            
                       
     return arr, file_name
