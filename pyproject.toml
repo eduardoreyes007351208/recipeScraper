@@ -9,3 +9,7 @@ dependencies = [
     "requests>=2.32.5",
     "validators>=0.35.0",
 ]
+
+
+[project.scripts]
+recipescraper = "recipescraper.main:main"
