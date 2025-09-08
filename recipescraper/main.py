@@ -1,4 +1,4 @@
-from utils import get_data, write_data
+from .utils import get_data, write_data
 import validators
 import argparse
 
