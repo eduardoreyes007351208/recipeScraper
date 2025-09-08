@@ -3,7 +3,7 @@ import validators
 
 def main():
     array = []
-    url = input('Enter the url for the Preppy Kitchen recipe(enter "q" to quit): ')
+    url = input('Enter the url to scrape recipe (enter "q" to quit): ')
     
     if validators.url(url):
         
