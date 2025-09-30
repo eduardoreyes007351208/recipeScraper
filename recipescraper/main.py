@@ -3,6 +3,31 @@ from .utils import get_data, write_data
 import validators
 import argparse
 
+from fastapi import FastAPI, HTTPException, Response
+
+api = FastAPI()
+
+# GET pdf 
+@api.get('/get_pdf')
+def get_pdf(url: str):
+    # define array to contain data from get_data
+    array = []
+    
+    # check to see the url argument from user is a valid url
+    if validators.url(url):
+        
+        new_array, file_name = get_data(url, array)
+        if len(new_array) < 4:
+            raise HTTPException(status_code=404, detail='Recipe not found')
+            
+        else:
+            pdf_bytes = bytes(write_data(new_array, file_name))
+            return Response(
+                content=pdf_bytes,
+                media_type='application/pdf',
+                headers={'Content-Disposition': f'attachment; filename={file_name}.pdf'}
+            )
+
 # define the main functions
 def main():
     # define array to contain data from get_data
