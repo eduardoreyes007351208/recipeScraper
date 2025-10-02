@@ -16,13 +16,12 @@ def get_pdf(url: str):
     # check to see the url argument from user is a valid url
     if validators.url(url):
         
-        new_array, file_name = get_data(url, array)
-        print(new_array)
+        new_array, file_name, title = get_data(url, array)
         if len(new_array) < 4:
             raise HTTPException(status_code=404, detail='Recipe not found')
             
         else:
-            pdf_bytes = bytes(write_data(new_array, file_name))
+            pdf_bytes = bytes(write_data(new_array, title))
             return Response(
                 content=pdf_bytes,
                 media_type='application/pdf',
