@@ -7,7 +7,8 @@ requires-python = ">=3.13"
 dependencies = [
     "argparse>=1.4.0",
     "bs4>=0.0.2",
-    "fpdf>=1.7.2",
+    "fastapi[standard]>=0.118.0",
+    "fpdf2>=2.8.4",
     "requests>=2.32.5",
     "validators>=0.35.0",
 ]

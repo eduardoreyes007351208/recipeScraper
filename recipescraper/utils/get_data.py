@@ -63,18 +63,15 @@ def get_data(url, arr):
     # lowercase all letters, and replace whitespaces with underscore
     file_name = title.lower().replace(' ', '_')
     
-    # append the recipe title to array parameter
-    arr.append(title)
-    
     # iterate through the ingredients list and append
     # each ingredient to the array
-    arr.append('\nIngredients:')
+    arr.append('Ingredients:')
     for i, item in enumerate(ingredient_list, start=1):
         arr.append(f'{i}. {item}')
         
     # iterate through the instructions list and append
     # each instruction to the array
-    arr.append('\nInstructions:')
+    arr.append('Instructions:')
     for section in instruction_list:
         sec_name = section.get('name')
         arr.append(f'{sec_name}')
@@ -85,4 +82,4 @@ def get_data(url, arr):
             arr.append(f'{i}. {step.get('text')}')
             
     # return the appended array and the lowercase file name            
-    return arr, file_name
+    return arr, file_name, title

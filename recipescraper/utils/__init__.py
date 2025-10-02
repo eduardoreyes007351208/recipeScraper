@@ -2,4 +2,4 @@
 # import get_data and write_data modules from their
 # python files
 from .get_data import get_data
-from .write_data import write_data
+from .pdf_generate import pdf_generate
