@@ -1,7 +1,6 @@
 # import libraries and modules for main.pu
 from .utils import get_data, pdf_generate
 import validators
-import argparse
 
 from fastapi import FastAPI, HTTPException, Response
 
