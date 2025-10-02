@@ -68,13 +68,13 @@ def get_data(url, arr):
     
     # iterate through the ingredients list and append
     # each ingredient to the array
-    arr.append('\nIngredients:')
+    arr.append('Ingredients:')
     for i, item in enumerate(ingredient_list, start=1):
         arr.append(f'{i}. {item}')
         
     # iterate through the instructions list and append
     # each instruction to the array
-    arr.append('\nInstructions:')
+    arr.append('Instructions:')
     for section in instruction_list:
         sec_name = section.get('name')
         arr.append(f'{sec_name}')

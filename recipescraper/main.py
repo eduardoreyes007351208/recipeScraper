@@ -17,6 +17,7 @@ def get_pdf(url: str):
     if validators.url(url):
         
         new_array, file_name = get_data(url, array)
+        print(new_array)
         if len(new_array) < 4:
             raise HTTPException(status_code=404, detail='Recipe not found')
             
