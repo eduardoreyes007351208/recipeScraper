@@ -29,3 +29,5 @@ Thumbs.db
 
 # uv lock file
 uv.lock
+__pycache__/
+*.pyc
