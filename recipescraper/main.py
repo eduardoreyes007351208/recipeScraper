@@ -3,8 +3,17 @@ from .utils import get_data, pdf_generate
 import validators
 
 from fastapi import FastAPI, HTTPException, Response
+from fastapi.middleware.cors import CORSMiddleware
 
 api = FastAPI()
+
+# allow request for all origins
+api.add_middleware(
+    CORSMiddleware,
+    allow_origins=['*'],
+    allow_methods=['*'],
+    allow_headers=['*'],
+)
 
 # GET pdf 
 @api.get('/get_pdf')
