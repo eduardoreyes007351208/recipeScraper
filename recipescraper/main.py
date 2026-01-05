@@ -8,11 +8,13 @@ from fastapi.middleware.cors import CORSMiddleware
 api = FastAPI()
 
 # allow request for all origins
+# expose header for filename
 api.add_middleware(
     CORSMiddleware,
     allow_origins=['*'],
     allow_methods=['*'],
     allow_headers=['*'],
+    expose_headers=['Content-Disposition']
 )
 
 # GET pdf 
