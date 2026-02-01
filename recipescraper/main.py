@@ -13,7 +13,9 @@ api.add_middleware(
     CORSMiddleware,
     allow_origins=[
         'http://localhost:5173',
-        'https://recipe-scraper-website.vercel.app',               
+        'https://recipe-scraper-website.vercel.app',
+        'https://www.meal2print.com',
+        'https://meal2print.com'              
     ],
     allow_credentials=True,
     allow_methods=['*'],
