@@ -11,7 +11,11 @@ api = FastAPI()
 # expose header for filename
 api.add_middleware(
     CORSMiddleware,
-    allow_origins=['*'],
+    allow_origins=[
+        'http://localhost:5173',
+        'https://recipe-scraper-website.vercel.app',               
+    ],
+    allow_credentials=True,
     allow_methods=['*'],
     allow_headers=['*'],
     expose_headers=['Content-Disposition']
