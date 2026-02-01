@@ -27,13 +27,13 @@ def get_pdf(url: str):
     if validators.url(url):
         
         # get values from get_data module
-        new_array, file_name, title = get_data(url, array)
+        new_array, file_name, title, author = get_data(url, array)
         
         if len(new_array) < 4:
             raise HTTPException(status_code=404, detail='Recipe not found')
             
         else:
-            pdf_bytes = bytes(pdf_generate(new_array, title))
+            pdf_bytes = bytes(pdf_generate(new_array, title, author))
             return Response(
                 content=pdf_bytes,
                 media_type='application/pdf',

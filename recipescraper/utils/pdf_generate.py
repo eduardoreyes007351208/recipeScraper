@@ -3,7 +3,7 @@ from pathlib import Path
 from fpdf import FPDF
 
 # define function/module and define parameters 'arr' and 'file_name'
-def pdf_generate(arr, title):
+def pdf_generate(arr, title, author):
     
     # get the path of the font
     font_path = Path(__file__).parent.parent / 'fonts' / 'DejaVuSansCondensed.ttf' 
@@ -23,6 +23,9 @@ def pdf_generate(arr, title):
     pdf.cell(pdf.epw, None, title.title(), align='C')
     pdf.ln(10)
     pdf.set_font('DejaVu', size=12)
+    #recipe author
+    pdf.cell(pdf.epw, None, f'Author: {author}', align='C')
+    pdf.ln(10)
     
     # write the ingredients and instructions cells
     for val in arr: 

@@ -17,7 +17,11 @@ def get_data(url, arr):
     # which gets the metadata containing recipe content and load it as json
     complete_data = soup.find('script', type='application/ld+json').get_text().strip()
     group_array = json.loads(complete_data)
+    
+    authorMetaData = soup.find('meta', attrs={'name': 'author'})
+    
     # define variables to contain title, ingredients, and instructions
+    author = ''
     title = ''
     ingredient_list = ''
     instruction_list = ''
@@ -55,10 +59,18 @@ def get_data(url, arr):
         
         # the data is a list and get the title, ingredients, and instructions
         data = group_array[0]
-        title = data.get('name')
         ingredient_list = data.get('recipeIngredient')
         instruction_list = data.get('recipeInstructions')
         
+        
+    if authorMetaData and authorMetaData.get('content'):
+        author = authorMetaData['content']
+    else:
+        meta_author = soup.find('meta', attrs={'property': 'article:author'})
+        if meta_author and meta_author.get('content'):
+            author = meta_author['content']
+        else:
+            author = 'Could not be found.'
     # to get the file name for txt file, just get the recipe title and
     # lowercase all letters, and replace whitespaces with underscore
     file_name = title.lower().replace(' ', '_')
@@ -82,4 +94,4 @@ def get_data(url, arr):
             arr.append(f'{i}. {step.get('text')}')
             
     # return the appended array and the lowercase file name            
-    return arr, file_name, title
+    return arr, file_name, title, author
