@@ -1,9 +1,9 @@
-RecipeScraper CLI Tool
+Meal2Print CLI Tool
 
 Version: 0.1.1
 Python: >= 3.13
 
-RecipeScraper is a Python command-line tool that extracts recipe information from a given recipe URL. It supports most popular recipe websites that use structured data (JSON-LD) and saves the results in a structured text format.
+Meal2Print API is a Python command-line tool that extracts recipe information from a given recipe URL. It supports most popular recipe websites that use structured data (JSON-LD) and saves the results in a structured text format.
 
 Features:
 CLI prompts for a recipe URL, or pass it as an argument
